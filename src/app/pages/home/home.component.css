@@ -1,0 +1,15 @@
+.adm-card{
+    min-height: 250px;
+    margin-bottom: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+.count-numbers{
+    font-size: 100px;
+    
+}
+
+.count-name{
+    font-size: 50px;
+}

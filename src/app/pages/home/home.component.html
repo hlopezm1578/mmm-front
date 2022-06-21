@@ -12,6 +12,39 @@
         </button>
       </div>
     </div>
+    <div class="main-panel">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card adm-card text-white" [ngClass]="{'bg-primary':totalProfit>0 , 'bg-danger':totalProfit<0}">
+                  <i class="fa fa-code-fork"></i>
+                  <span class="count-numbers">{{totalProfit | percent:'1.1-2'}}</span>
+                  <span class="count-name">Margen total</span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card adm-card text-white bg-success">
+                  <i class="fa fa-code-fork"></i>
+                  <span class="count-numbers">{{totalOperations}}</span>
+                  <span class="count-name">Total Operaciones</span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card adm-card text-white bg-primary">
+                  <i class="fa fa-code-fork"></i>
+                  <span class="count-numbers">{{winPos}}</span>
+                  <span class="count-name">Ganadoras</span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card adm-card text-white bg-warning">
+                  <i class="fa fa-code-fork"></i>
+                  <span class="count-numbers">{{losePos}}</span>
+                  <span class="count-name">Perdedoras</span>
+                </div>
+            </div>
+        </div>
+        
+      </div>
     <h2>Cryptos</h2>
     <div class="table-responsive">
       <table class="table table-striped table-sm">
@@ -37,12 +70,12 @@
             <td>{{asset.active}}</td>
             <td>{{asset.total}}</td>
             <td>{{asset.wins}}</td>
-            <td>{{asset.wins*4}}</td>
+            <td>{{asset.pnWins}}</td>
             <td>{{asset.loses}}</td>
-            <td>{{asset.loses*2}}</td>
+            <td>{{asset.pnLoses}}</td>
             <td>{{asset.wr | percent:'1.1-2'}}</td>
-            <td>{{asset.wins*4 - asset.loses*2}}</td>
-            <td>{{(asset.wins*4 - asset.loses*2)/100 | percent:'1.1-2'}}</td>
+            <td>{{asset.pnTotal}}</td>
+            <td>{{asset.profit | percent:'1.1-2'}}</td>
           </tr>
         </tbody>
       </table>
