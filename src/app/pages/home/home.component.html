@@ -14,8 +14,8 @@
     </div>
     <div class="main-panel">
         <div class="row">
-            <div class="col-md-3">
-                <div class="card adm-card text-white" [ngClass]="{'bg-primary':totalProfit>0 , 'bg-danger':totalProfit<0}">
+            <div class="col-md-3 ">
+                <div class="card adm-card text-white p-3" [ngClass]="{'bg-primary':totalProfit>0 , 'bg-danger':totalProfit<0}">
                   <i class="fa fa-code-fork"></i>
                   <span class="count-numbers">{{totalProfit | percent:'1.1-2'}}</span>
                   <span class="count-name">Margen total</span>
