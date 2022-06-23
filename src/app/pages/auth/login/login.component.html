@@ -1,0 +1,51 @@
+<div class="div-login">
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 form-signin">
+        <form [formGroup]="userForm">
+            <img class="mb-4" src="../assets/img/btclogo.png" alt="" width="140" height="72">
+            <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+        
+            <div class="form-floating">
+              <input
+                formControlName="email" 
+                type="email" 
+                class="form-control" 
+                id="txtEmail"
+                name="txtEmail"
+                placeholder="name@example.com">
+              <label for="txtEmail">Correo</label>
+              <span *ngIf="email?.invalid && (email?.dirty || email?.touched) && email?.errors?.['required'] " class="text-danger">
+                El campo email es requerido
+            </span>
+            <span *ngIf="email?.invalid && (email?.dirty || email?.touched) && email?.errors?.['email'] " class="text-danger">
+                El formato del email no es valido
+            </span>
+            </div>
+            <div class="form-floating">
+              <input 
+                formControlName="password"
+                type="password" 
+                class="form-control" 
+                id="txtPassword"
+                name="txtPassword"  
+                placeholder="Password">
+              <label for="txtPassword">Password</label>
+              <span *ngIf="password?.invalid && (password?.dirty || password?.touched) " class="text-danger">
+                El campo password es requerido
+            </span>
+            </div>
+        
+            <div class="checkbox mb-3">
+              <label>
+                <input type="checkbox" value="remember-me"> Recordarme
+              </label>
+            </div>
+            <button [disabled]="userForm.invalid" (click)="submitForm()" class="w-100 btn btn-lg btn-primary" type="button">Ingresar</button>
+            <span *ngIf="error" class="text-danger">
+              {{errorMsj}}
+            </span>
+            <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
+          </form>
+    </main>   
+</div>
+
+

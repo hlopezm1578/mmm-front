@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  url:"https://mmt-binance.herokuapp.com"
+  //url:"https://mmt-binance.herokuapp.com"
+  url:"http://localhost:3000"
 };
 
 /*
