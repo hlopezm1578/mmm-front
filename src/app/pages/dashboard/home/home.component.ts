@@ -47,7 +47,7 @@ export class HomeComponent implements OnInit {
       asset.total = wins+loses;
       asset.loses = loses;
       asset.wins = wins;
-      asset.pnWins = wins*4;
+      asset.pnWins = wins*asset.risk;
       asset.pnLoses = loses*2;
       asset.pnTotal = asset.pnWins - asset.pnLoses;
       asset.profit = asset.pnTotal/100;
