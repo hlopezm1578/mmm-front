@@ -47,13 +47,14 @@ export class HomeComponent implements OnInit {
       asset.total = wins+loses;
       asset.loses = loses;
       asset.wins = wins;
-      asset.pnWins = wins*asset.risk;
+      asset.pnWins = wins*2*asset.risk;
       asset.pnLoses = loses*2;
       asset.pnTotal = asset.pnWins - asset.pnLoses;
       asset.profit = asset.pnTotal/100;
       var wr = asset.total>0 ? asset.wins/asset.total : 0;
       asset.wr = wr;
     });
+    console.log(assets);
     return assets;
   }
 
