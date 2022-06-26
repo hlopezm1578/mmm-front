@@ -29,16 +29,29 @@ export class HomeComponent implements OnInit {
   }
 
   processData(assets:any){
+
+    var curr = new Date; // get current date
+    var first = curr.getDate() - curr.getDay(); // First day is the day of the month - the day of the week
+    var last = first + 6; // last day is the first day + 6
+
+    var firstday = new Date(curr.setDate(first)).toUTCString();
+    var lastday = new Date(curr.setDate(last)).toUTCString();
+    console.log(new Date(firstday).toDateString());
+    console.log(new Date(lastday).toDateString());
+    var firstdayLocal =  new Date(firstday).toDateString();
+    var lastdaylocal = new Date(lastday).toDateString()
+
     assets.forEach((asset:any) => {
       var wins = asset.positions.filter((position:any)=>{
-        if(position.result>0){
+        
+        if(position.result>0 && new Date(position.createdAt) > new Date(firstdayLocal) ){
           return true;
         }else{
           return false;
         }
       }).length;
       var loses = asset.positions.filter((position:any)=>{
-        if(position.result<0){
+        if(position.result<0 && new Date(position.createdAt) > new Date(firstdayLocal)){
           return true;
         }else{
           return false;
