@@ -64,7 +64,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let asset of assets" [ngClass]="{'table-primary' : (asset.wins*4 - asset.loses*2)/100>0 , 'table-danger' : (asset.wins*4 - asset.loses*2)/100<0 }">
+          <tr *ngFor="let asset of assets" [ngClass]="{'table-primary' : asset.profit>0 , 'table-danger' : asset.profit<0 }">
             <td>{{asset.name}}</td>
             <td>{{asset.precision}}</td>
             <td>{{asset.active}}</td>

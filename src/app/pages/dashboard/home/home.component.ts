@@ -67,8 +67,12 @@ export class HomeComponent implements OnInit {
       var wr = asset.total>0 ? asset.wins/asset.total : 0;
       asset.wr = wr;
     });
-    console.log(assets);
-    return assets;
+    //console.log(assets);
+    var assetsSort = assets.sort((a:any,b:any)=>(
+      parseFloat(a.profit)>parseFloat(b.profit) ? -1:1
+    ));
+    //console.log(assetsSort);
+    return assetsSort
   }
 
   getTotalProfit(assets:any){
